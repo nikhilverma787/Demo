@@ -1,0 +1,22 @@
+<h1>Login</h1>
+
+<%= flash[:notice] %>
+  
+<%= form_with model: @log, url: '/login' do |form| %>
+   <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+  </div>
+  <br>
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %>
+  </div>
+  <br>
+  <div>
+    <%= form.submit :LogIn%>
+  </div>
+
+<% end %>
+<p>If you have not account then Register your self</p>
+<%= link_to "Register", controller: :users, action: :new %>

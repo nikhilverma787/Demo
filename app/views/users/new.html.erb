@@ -1,0 +1,46 @@
+<h1>Register User</h1>
+<%= form_with model: @user do |form| %>
+
+  <div>
+    <%= form.label :name %><br>
+    <%= form.text_field :name %>
+
+    <% @user.errors.full_messages_for(:name).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+   <div>
+    <%= form.label :contact_integer %><br>
+    <%= form.text_field :contact_integer %>
+
+    <% @user.errors.full_messages_for(:contact_integer).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :email %><br>
+    <%= form.text_field :email %>
+
+    <% @user.errors.full_messages_for(:email).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.label :password %><br>
+    <%= form.text_field :password %>
+
+    <% @user.errors.full_messages_for(:password).each do |message| %>
+      <div><%= message %></div>
+    <% end %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<p>If you have account then Directly Login your self</p>
+<%= link_to "Login", controller: :users, action: :login %>
